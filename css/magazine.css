@@ -2,7 +2,16 @@
 	body{
 		overflow-y: hidden;
 	}
+	#canvas {
+		display: flex !important
+	}
 	#mobilecanvas {
+		display: none !important;
+	}
+}
+
+@media all and (max-width: 768px) {
+	#canvas {
 		display: none !important;
 	}
 }
@@ -37,9 +46,6 @@ img.mpage {
 	margin-top:80px;
 	display: flex;
 	flex-wrap: wrap;
-}
-#canvas {
-      display: flex !important;
 }
 
 .magazine-viewport .mag-container{
