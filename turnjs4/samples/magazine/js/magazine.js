@@ -1,12 +1,9 @@
 /*
  * Magazine sample
 */
-
 var myModal = new bootstrap.Modal(document.getElementById('regionmodal'), {
   keyboard: false
 })
-
-
 function addPage(page, book) {
 
 	var id, pages = book.turn('pages');
@@ -139,7 +136,7 @@ function regionClick(event) {
 function processRegion(region, regionType) {
 
 	data = decodeParams(region.attr('region-data'));
-
+	console.log(regionType);
 	switch (regionType) {
 		case 'link' :
 
@@ -161,11 +158,11 @@ function processRegion(region, regionType) {
 		case 'to-page' :
 
 			$('.magazine').turn('page', data.page);
-
 		break;
-		case 'laec' :
-			$('#modalimg').attr('src',data.url)
-			myModal.show()
+
+		case 'mesure' :
+			console.log(mymodal);
+		  mymodal.show()
 
 		break;
 	}

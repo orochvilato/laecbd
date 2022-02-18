@@ -3,10 +3,10 @@
 	"y":20,
 	"width":270,
 	"height":90,
-	"class":"link",
+	"class":"laec",
 	"data":
 		{
-			"url": "https://laec.fr"
+			"url": "https://laec.fr/static/img/card.png"
 		}
 }
 ]
