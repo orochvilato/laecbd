@@ -1,14 +1,45 @@
-body{
-	overflow:hidden;
-	background-color:#fcfcfc;
+@media all and (min-width: 768px) {
+	body{
+		overflow-y: hidden;
+	}
+	#mobilecanvas {
+		display: none !important;
+	}
+}
+
+body {
 	margin:0;
 	padding:0;
-}
-body {
 	background-image: url('/img/fond-bureau-revu.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
+	overflow-x: hidden;
+}
+
+.navbar-brand {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.navbar .nav-item {
+	margin-right: 1em;
+	margin-left: 1em;
+	font-weight: 800;
+}
+
+img.mpage {
+	margin-top: 5px;
+	width:100%;
+
+
+}
+#mobilecanvas {
+	margin-top:80px;
+	display: flex;
+	flex-wrap: wrap;
+}
+#canvas {
+      display: flex !important;
 }
 
 .magazine-viewport .mag-container{

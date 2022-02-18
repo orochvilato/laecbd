@@ -1,4 +1,12 @@
 function loadApp() {
+  console.log(window.innerWidth);
+  if (window.innerWidth<768) {
+
+    return
+  }
+  //if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+//      return
+  //}
 
   $('#canvas').fadeIn(1000);
 
