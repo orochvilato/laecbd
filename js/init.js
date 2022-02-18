@@ -25,11 +25,11 @@ function loadApp() {
 
       // Magazine width
 
-      width: 700,
+      width: window.innerHeight*0.8,
 
       // Magazine height
 
-      height: 700,
+      height: window.innerHeight*0.8,
 
       // Duration in millisecond
 

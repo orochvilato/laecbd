@@ -16,6 +16,12 @@
 	}
 }
 
+:root {
+	--magheight: calc(80vh);
+}
+
+
+
 body {
 	margin:0;
 	padding:0;
@@ -54,23 +60,23 @@ img.mpage {
 
 .magazine-viewport .mag-container{
 	position:absolute;
-	top:50%;
+	top:54%;
 	left:50%;
-	width:700px;
-	height:700px;
+	width: var(--magheight);
+	height:var(--magheight);
 	margin:auto;
 }
 
 .magazine-viewport .magazine{
-	width:700px;
-	height:700px;
-	left:-350px;
-	top:-350px;
+	width:var(--magheight);
+	height:var(--magheight);
+	left: calc(- var(--magheight) /2);
+	top:calc(- var(--magheight) /2);
 }
 
 .magazine-viewport .page{
-	width:700px;
-	height:700px;
+	width:var(--magheight);
+	height:var(--magheight);
 	background-color:white;
 	background-repeat:no-repeat;
 	background-size:100% 100%;
