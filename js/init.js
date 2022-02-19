@@ -53,7 +53,7 @@ function mobile() {
 
 
 function loadApp() {
-  if (window.innerWidth<960) {
+  if (window.innerWidth<1024) {
     mobile();
     return
   }
