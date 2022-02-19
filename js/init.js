@@ -1,7 +1,60 @@
-function loadApp() {
-  console.log(window.innerWidth);
-  if (window.innerWidth<768) {
+function mobile() {
+  function m_addPage(page) {
 
+  	// Create a new element for this page
+  	var element = $('<div class="mpage"/>', {});
+		element.html('<div class="loader"></div>');
+		m_loadPage(page, element);
+    $(element).appendTo('#mobilecanvas');
+
+  }
+
+  function m_loadPage(page, pageElement) {
+
+  	// Create an image element
+
+  	var img = $('<img/>');
+
+  	//img.mousedown(function(e) {
+  	//	e.preventDefault();
+
+  	//});
+  	img.load(function() {
+
+  		// Set the size
+  		$(this).css({width: '100%', height: '100%'});
+
+  		// Add the image to the page after loaded
+
+  		$(this).appendTo(pageElement);
+
+  		// Remove the loader indicator
+
+  		pageElement.find('.loader').remove();
+  	});
+
+  	// Load the page
+
+  	img.attr('src', 'pages/' +  page + '.jpg');
+
+  	//loadRegions(page, pageElement);
+
+  }
+
+
+  $(window).scroll(function() {
+  if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
+     m_addPage($('.mpage').length + 1);
+
+  }
+});
+}
+
+
+
+function loadApp() {
+  if (window.innerWidth<768) {
+    mobile();
     return
   }
   //if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -25,11 +78,11 @@ function loadApp() {
 
       // Magazine width
 
-      width: window.innerHeight*0.8,
+      width: Math.min(1300,window.innerHeight -100),
 
       // Magazine height
 
-      height: window.innerHeight*0.8,
+      height: Math.min(1300,window.innerHeight -100),
 
       // Duration in millisecond
 
@@ -147,8 +200,9 @@ function loadApp() {
 
         $('.thumbnails').hide();
         $('.made').hide();
+        $('.magazine-viewport').addClass('zoomed');
         $('.magazine').removeClass('animated').addClass('zoom-in');
-        $('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
+        //$('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
 
         if (!window.escTip && !$.isTouch) {
           escTip = true;
@@ -168,7 +222,8 @@ function loadApp() {
         $('.exit-message').hide();
         $('.thumbnails').fadeIn();
         $('.made').fadeIn();
-        $('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
+        //$('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
+        $('.magazine-viewport').removeClass('zoomed');
 
         setTimeout(function(){
           $('.magazine').addClass('animated').removeClass('zoom-in');
@@ -392,6 +447,6 @@ yepnope({
   test : Modernizr.csstransforms,
   yep: ['lib/turn.js'],
   nope: ['lib/turn.html4.min.js'],
-  both: ['lib/zoom.min.js', 'js/magazine.js', 'css/magazine.css'],
+  both: ['lib/zoom.min.js', 'js/magazine.js'],
   complete: loadApp
 });

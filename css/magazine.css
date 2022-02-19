@@ -17,7 +17,7 @@
 }
 
 :root {
-	--magheight: calc(80vh);
+	--magheight: min(1300px,calc(100vh - 100px));
 }
 
 
@@ -34,7 +34,13 @@ body {
 div.modal-body {
 	padding: 0;
 }
-
+div.card.auteur img {
+	width: 50%;
+}
+div.card.auteur .card-title {
+	margin-top: -10px;
+	font-weight: 900;
+}
 .modal img { width: 100%;}
 .navbar-brand {
 	padding-top: 0px;
@@ -53,11 +59,15 @@ img.mpage {
 
 }
 #mobilecanvas {
-	margin-top:80px;
+	margin-top:60px;
 	display: flex;
 	flex-wrap: wrap;
+	padding: 0;
 }
 
+.magazine-viewport.zoomed {
+	z-index:1050;
+}
 .magazine-viewport .mag-container{
 	position:absolute;
 	top:54%;
@@ -199,7 +209,7 @@ img.mpage {
 .magazine-viewport .next-button,
 .magazine-viewport .previous-button{
 	width:22px;
-	height:700px;
+	height:var(--magheight);
 	position:absolute;
 	top:0;
 }
@@ -230,7 +240,7 @@ img.mpage {
 .magazine-viewport .previous-button-hover,
 .magazine-viewport .previous-button-down{
 	background-image:url(../pics/arrows.png);
-	background-position:-4px 324px;
+	background-position:-4px calc(var(--magheight) / 2 - 25px);
 	background-repeat:no-repeat;
 }
 
@@ -242,7 +252,7 @@ img.mpage {
 .magazine-viewport .next-button-hover,
 .magazine-viewport .next-button-down{
 	background-image:url(../pics/arrows.png);
-	background-position:-38px 324px;
+	background-position:-38px calc(var(--magheight) / 2 - 25px);
 	background-repeat:no-repeat;
 }
 
