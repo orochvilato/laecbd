@@ -53,11 +53,14 @@ div.card.auteur .card-title {
 }
 
 .mpage {
-	margin-top: 5px;
+	margin-top: 4px;
 	width:100%;
-
-
 }
+.mpage img {
+	width:100%;
+	height: 100%;
+}
+
 #mobilecanvas {
 	margin-top:60px;
 	display: flex;
